@@ -6,7 +6,7 @@ readme = "README.md"
 authors = [
     { name = "Uzair017", email = "uzairrafiq2627@gmail.com" }
 ]
-requires-python = ">=3.12"
+requires-python = ">=3.11"
 dependencies = []
 
 [build-system]
@@ -17,6 +17,7 @@ build-backend = "uv_build"
 dev = [
     "marimo>=0.24.2",
     "pytest>=9.1.1",
+    "pytest-cov>=7.0.0",
     "ruff>=0.16.8",
 ]
 
