@@ -47,16 +47,16 @@ def _(mo):
     return (user_input,)
 
 
-@app.cell
-def fibonacci():
-    #refactored version
-    # def fibonacci(n):
-    #      a=0
-    #      b=1
-    #      for _ in range(n):
-    #          a,b=b, a+b
-    #      return a
-    return
+# @app.cell
+# def fibonacci():
+#     #refactored version
+#     # def fibonacci(n):
+#     #      a=0
+#     #      b=1
+#     #      for _ in range(n):
+#     #          a,b=b, a+b
+#     #      return a
+#     return
 
 
 @app.function
