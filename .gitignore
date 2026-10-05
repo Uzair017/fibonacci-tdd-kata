@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.venv/
+dist/
+.coverage
+coverage.xml
+.marimo/
+__marimo__/
+site/
