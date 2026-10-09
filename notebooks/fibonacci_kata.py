@@ -25,7 +25,7 @@ def _():
 
 @app.cell
 def _():
-    #version1
+    # version1
     # def fibonacci(n):
     #     if n == 0:
     #         return 0
@@ -37,12 +37,7 @@ def _():
 
 @app.cell
 def _(mo):
-    user_input=mo.ui.number(
-        start=0,
-        step=1,
-        value=10,
-        label="n"
-    )
+    user_input = mo.ui.number(start=0, step=1, value=10, label="n")
     user_input
     return (user_input,)
 
@@ -60,36 +55,36 @@ def _(mo):
 
 
 @app.function
-#latest optimized version which also handles large values
+# latest optimized version which also handles large values
 def fibonacci(n):
-    if n<0:
+    if n < 0:
         raise ValueError("n must not be negative")
-    def fast_doubling_algo(k):
-        if k ==0:
-            return 0,1
-        a,b=fast_doubling_algo(k//2)
-        c= a*(2*b-a)
-        d=a*a+b*b
 
-        if k%2==0:
-            return c,d
-        return d,c+d
+    def fast_doubling_algo(k):
+        if k == 0:
+            return 0, 1
+        a, b = fast_doubling_algo(k // 2)
+        c = a * (2 * b - a)
+        d = a * a + b * b
+
+        if k % 2 == 0:
+            return c, d
+        return d, c + d
+
     return fast_doubling_algo(n)[0]
 
 
 @app.cell
 def _(mo, user_input):
-    result=fibonacci(user_input.value)
-    mo.md(
-        f"**F({user_input.value}) = {result}**"
-    )
+    result = fibonacci(user_input.value)
+    mo.md(f"**F({user_input.value}) = {result}**")
     return
 
 
 @app.function
 def test_10M_number_fibonacci():
-    result= fibonacci(10_000_000)
-    assert result>0
+    result = fibonacci(10_000_000)
+    assert result > 0
 
 
 @app.function
@@ -103,7 +98,7 @@ def test_fibonacci():
 
 
 @app.function
-#additional test for big values
+# additional test for big values
 def test_largenumbers_fibonacci():
     assert fibonacci(10) == 55
     assert fibonacci(100) == 354224848179261915075
