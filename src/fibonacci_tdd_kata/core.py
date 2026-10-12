@@ -1,5 +1,7 @@
 def fibonacci(n: int) -> int:
     """Return the nth Fibonacci number."""
+    if n < 0:
+        raise ValueError("n must be non-negative")
     a = 0
     b = 1
 

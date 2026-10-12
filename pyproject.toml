@@ -9,6 +9,9 @@ authors = [
 requires-python = ">=3.11"
 dependencies = []
 
+[project.scripts]
+fibonacci = "fibonacci_tdd_kata.cli:main"
+
 [build-system]
 requires = ["uv_build>=0.12.17,<0.13.0"]
 build-backend = "uv_build"
@@ -47,3 +50,4 @@ source = ["src"]
 [tool.coverage.report]
 show_missing = true
 fail_under = 90
+
